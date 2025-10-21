@@ -98,8 +98,8 @@ export default function ContactPage() {
       icon: "📧",
       title: "Email Us",
       description: "Send us an email and we'll respond within 24 hours",
-      contact: "hello@resumify.com",
-      action: "mailto:hello@resumify.com"
+      contact: "gameranonymous338@gmail.com",
+      action: "mailto:gameranonymous338@gmail.com"
     },
     {
       icon: "💬",
@@ -112,15 +112,15 @@ export default function ContactPage() {
       icon: "🐛",
       title: "Report Bug",
       description: "Found a bug? Let us know so we can fix it",
-      contact: "bugs@resumify.com",
-      action: "mailto:bugs@resumify.com"
+      contact: "gameranonymous338@gmail.com",
+      action: "mailto:gameranonymous338@gmail.com"
     },
     {
       icon: "💡",
       title: "Feature Request",
       description: "Have an idea? We'd love to hear it",
-      contact: "ideas@resumify.com",
-      action: "mailto:ideas@resumify.com"
+      contact: "gameranonymous338@gmail.com",
+      action: "mailto:gameranonymous338@gmail.com"
     }
   ];
 
@@ -184,7 +184,7 @@ export default function ContactPage() {
                 <p className="text-white/70 mb-4 text-sm">
                   {method.description}
                 </p>
-                <p className="text-purple-300 font-medium">
+                <p className="text-purple-300 font-medium break-all text-sm">
                   {method.contact}
                 </p>
               </div>
