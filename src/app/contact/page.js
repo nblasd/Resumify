@@ -159,7 +159,7 @@ export default function ContactPage() {
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> Touch</span>
           </h1>
           <p ref={subtitleRef} className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
-            Have questions, feedback, or need help? We're here to help you succeed in your job search.
+            Have questions, feedback, or need help? We&apos;re here to help you succeed in your job search.
           </p>
         </div>
       </section>
@@ -198,7 +198,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h3 className="text-4xl font-bold text-white mb-4">Send us a Message</h3>
-            <p className="text-xl text-white/80">We'd love to hear from you</p>
+            <p className="text-xl text-white/80">We&apos;d love to hear from you</p>
           </div>
           
           <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
