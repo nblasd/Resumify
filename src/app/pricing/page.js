@@ -191,7 +191,7 @@ export default function PricingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold text-white mb-4">How Much Others Charge</h3>
-            <p className="text-xl text-white/80">See what you're saving by choosing Resumify</p>
+            <p className="text-xl text-white/80">See what you&apos;re saving by choosing Resumify</p>
           </div>
           
           <div className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10">
@@ -248,12 +248,12 @@ export default function PricingPage() {
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
               <div className="text-5xl mb-4">🚀</div>
               <h4 className="text-xl font-semibold text-white mb-4">Open Source Spirit</h4>
-              <p className="text-white/80">We're building tools that empower people, not extract money from them.</p>
+              <p className="text-white/80">We&apos;re building tools that empower people, not extract money from them.</p>
             </div>
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
               <div className="text-5xl mb-4">🎯</div>
               <h4 className="text-xl font-semibold text-white mb-4">Focus on Value</h4>
-              <p className="text-white/80">We'd rather help you land your dream job than charge you for basic features.</p>
+              <p className="text-white/80">We&apos;d rather help you land your dream job than charge you for basic features.</p>
             </div>
           </div>
         </div>
