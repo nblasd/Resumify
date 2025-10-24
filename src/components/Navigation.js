@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import Link from 'next/link';
 
 export default function Navigation() {
   const navRef = useRef(null);
@@ -97,18 +98,9 @@ export default function Navigation() {
     gsap.to(buttonRef.current, { scale: 0.95, duration: 0.1, yoyo: true, repeat: 1 });
   };
 
-  const handleNavClick = (e, item) => {
-    e.preventDefault();
-    if (item === 'Features') {
-      // Scroll to features section on home page
-      window.location.href = '/#features';
-    } else if (item === 'Pricing') {
-      // Navigate to pricing page
-      window.location.href = '/pricing';
-    } else if (item === 'Contact') {
-      // Navigate to contact page
-      window.location.href = '/contact';
-    }
+  const handleNavClick = (item) => {
+    // For anchor links on the home page, we can let the default behavior handle it
+    // Next.js Link will handle internal page navigation
   };
 
   return (
@@ -118,39 +110,40 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div
+          <Link
+            href="/"
             ref={logoRef}
             onMouseEnter={handleLogoHover}
             onMouseLeave={handleLogoLeave}
             className="text-2xl font-bold text-white cursor-pointer"
           >
             Resumify
-          </div>
+          </Link>
           <div className="hidden md:flex gap-8">
             {['Features', 'Pricing', 'Contact'].map((item, index) => (
-              <a
+              <Link
                 key={item}
+                href={item === 'Pricing' ? '/pricing' : item === 'Contact' ? '/contact' : `/#${item.toLowerCase()}`}
                 ref={el => menuItemsRef.current[index] = el}
-                href={item === 'Pricing' ? '/pricing' : item === 'Contact' ? '/contact' : `#${item.toLowerCase()}`}
-                onClick={(e) => handleNavClick(e, item)}
                 onMouseEnter={() => handleMenuItemHover(index)}
                 onMouseLeave={() => handleMenuItemLeave(index)}
                 className="text-white/80 hover:text-white transition-colors cursor-pointer px-2"
               >
                 {item}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="flex items-center space-x-4">
-            <button
-              ref={buttonRef}
-              onMouseEnter={handleButtonHover}
-              onMouseLeave={handleButtonLeave}
-              onClick={() => window.location.href = '/cv-builder'}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all"
-            >
-              Get Started
-            </button>
+            <Link href="/cv-builder">
+              <button
+                ref={buttonRef}
+                onMouseEnter={handleButtonHover}
+                onMouseLeave={handleButtonLeave}
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all"
+              >
+                Get Started
+              </button>
+            </Link>
           </div>
         </div>
       </div>

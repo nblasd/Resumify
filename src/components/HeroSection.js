@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -205,17 +206,18 @@ export default function HeroSection() {
           ref={buttonsRef}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button
-            onMouseEnter={(e) => handleButtonHover(e.target)}
-            onMouseLeave={(e) => handleButtonLeave(e.target)}
-            onClick={(e) => {
-              handleButtonClick(e.target);
-              window.location.href = '/cv-builder';
-            }}
-            className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-16 py-6 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
-          >
-            Start Building Now
-          </button>
+          <Link href="/cv-builder">
+            <button
+              onMouseEnter={(e) => handleButtonHover(e.target)}
+              onMouseLeave={(e) => handleButtonLeave(e.target)}
+              onClick={(e) => {
+                handleButtonClick(e.target);
+              }}
+              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-16 py-6 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
+            >
+              Start Building Now
+            </button>
+          </Link>
         </div>
 
         {/* Floating elements */}
