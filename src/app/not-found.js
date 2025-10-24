@@ -162,17 +162,18 @@ export default function NotFound() {
             ref={buttonsRef}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <button
-              onMouseEnter={(e) => handleButtonHover(e.target)}
-              onMouseLeave={(e) => handleButtonLeave(e.target)}
-              onClick={(e) => {
-                handleButtonClick(e.target);
-                window.location.href = '/';
-              }}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-12 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
-            >
-              🏠 Go Home
-            </button>
+            <Link href="/">
+              <button
+                onMouseEnter={(e) => handleButtonHover(e.target)}
+                onMouseLeave={(e) => handleButtonLeave(e.target)}
+                onClick={(e) => {
+                  handleButtonClick(e.target);
+                }}
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-12 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
+              >
+                🏠 Go Home
+              </button>
+            </Link>
             <button
               onMouseEnter={(e) => handleButtonHover(e.target)}
               onMouseLeave={(e) => handleButtonLeave(e.target)}

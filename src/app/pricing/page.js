@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 
@@ -153,9 +154,11 @@ export default function PricingPage() {
                 Everything you need to create professional resumes. No credit card required, 
                 no trial periods, no premium upgrades. Just pure, unlimited access to all features.
               </p>
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-4 rounded-full text-xl font-semibold hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105">
-                Start Building Now
-              </button>
+              <Link href="/cv-builder">
+                <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-4 rounded-full text-xl font-semibold hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105">
+                  Start Building Now
+                </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -156,24 +157,28 @@ export default function CTASection() {
           ref={buttonsRef}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button
-            ref={button1Ref}
-            onMouseEnter={handleButton1Hover}
-            onMouseLeave={handleButton1Leave}
-            onClick={handleButton1Click}
-            className="bg-white text-purple-600 px-16 py-6 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
-          >
-            Create Resume Now
-          </button>
-          <button
-            ref={button2Ref}
-            onMouseEnter={handleButton2Hover}
-            onMouseLeave={handleButton2Leave}
-            onClick={handleButton2Click}
-            className="border-2 border-white text-white px-16 py-6 rounded-full text-lg font-semibold hover:bg-white/10 transition-all duration-300"
-          >
-            Learn More
-          </button>
+          <Link href="/cv-builder">
+            <button
+              ref={button1Ref}
+              onMouseEnter={handleButton1Hover}
+              onMouseLeave={handleButton1Leave}
+              onClick={handleButton1Click}
+              className="bg-white text-purple-600 px-16 py-6 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
+            >
+              Create Resume Now
+            </button>
+          </Link>
+          <Link href="/pricing">
+            <button
+              ref={button2Ref}
+              onMouseEnter={handleButton2Hover}
+              onMouseLeave={handleButton2Leave}
+              onClick={handleButton2Click}
+              className="border-2 border-white text-white px-16 py-6 rounded-full text-lg font-semibold hover:bg-white/10 transition-all duration-300"
+            >
+              Learn More
+            </button>
+          </Link>
         </div>
       </div>
     </section>

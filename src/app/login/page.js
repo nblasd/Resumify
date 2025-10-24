@@ -3,12 +3,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LoginPage() {
+  const router = useRouter();
   const heroRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
@@ -109,7 +112,7 @@ export default function LoginPage() {
       console.log('Login data:', formData);
       alert('Login successful! Welcome back to Resumify!');
       // Redirect to dashboard or home page
-      window.location.href = '/';
+      router.push('/');
     } catch (error) {
       console.error('Login error:', error);
       alert('Invalid credentials. Please try again.');
@@ -246,9 +249,9 @@ export default function LoginPage() {
 
           <p className="text-center text-white/60 mt-6">
             Don&apos;t have an account?{' '}
-            <a href="/signup" className="text-purple-300 hover:text-purple-200 font-semibold">
+            <Link href="/signup" className="text-purple-300 hover:text-purple-200 font-semibold">
               Create one here
-            </a>
+            </Link>
           </p>
         </div>
       </div>
